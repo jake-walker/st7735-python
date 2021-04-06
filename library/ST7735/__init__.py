@@ -295,7 +295,7 @@ class ST7735(object):
             self.command(ST7735_INVOFF)  # Don't invert display
 
         self.command(ST7735_MADCTL)     # Memory access control (directions)
-        self.data(0xC8)                 # row addr/col addr, bottom to top refresh
+        self.data(0xC0)                 # row addr/col addr, bottom to top refresh
 
         self.command(ST7735_COLMOD)     # set color mode
         self.data(0x05)                 # 16-bit color
