@@ -1,3 +1,8 @@
+0.0.5
+-----
+
+* Add mode option for switching between newer and older varients of the display
+
 0.0.4
 -----
 
