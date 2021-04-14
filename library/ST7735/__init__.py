@@ -148,7 +148,7 @@ class ST7735(object):
         :param offset_top: ROW offset in ST7735 memory
         :param invert: Invert display
         :param spi_speed_hz: SPI speed (in Hz)
-
+        :param mode: 1 for colour fixes (older displays), 0 to disable colour fixes (new displays)
         """
 
         GPIO.setwarnings(False)
@@ -297,7 +297,7 @@ class ST7735(object):
             self.command(ST7735_INVOFF)  # Don't invert display
 
         self.command(ST7735_MADCTL)     # Memory access control (directions)
-        if self.mode == 1:
+        if self._mode == 1:
             self.data(0xC0)             # row addr/col addr, bottom to top refresh
         else:
             self.data(0xC8)
